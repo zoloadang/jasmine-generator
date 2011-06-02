@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="gbk">
+	<title>Jasmine Test Runner</title>
+	<link rel="stylesheet" type="text/css" href="../jasmine-1.0.2/jasmine.css">
+	<script type="text/javascript" src="../jasmine-1.0.2/jasmine.js"></script>
+	<script type="text/javascript" src="../jasmine-1.0.2/jasmine-html.js"></script>
+	<script src="http://a.tbcdn.cn/s/kissy/1.1.6/kissy-min.js"></script>
+	<script src="http://a.tbcdn.cn/apps/snstaoshare/widget/ts/ts-min.js"></script>
+	<script src="{JS_PATH}"></script>
+</head>
+
+<body>
+
+	<script type="text/javascript">
+
+		{JASMINE_CASE}
+
+		jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
+		jasmine.getEnv().execute();
+
+	</script>
+
+</body>
+
+</html>

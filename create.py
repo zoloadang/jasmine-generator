@@ -28,6 +28,10 @@ wrap = re.compile(r'(\r|\n)')
 #匹配 description
 desc = re.compile(r'\s*\*\s*@fileoverview\s*')
 
+#匹配 spec 
+specStart = re.compile(r'\s*/\*\*\s*')
+specEnd = re.compile(r'^\s+\*\s*/')
+
 #匹配 spec
 spec = re.compile(r'\s*\*\s*@spec\s*')
 

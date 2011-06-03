@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="gbk">
+	<title>Jasmine Test Runner</title>
+	<link rel="stylesheet" type="text/css" href="../jasmine-1.0.2/jasmine.css">
+	<script type="text/javascript" src="../jasmine-1.0.2/jasmine.js"></script>
+	<script type="text/javascript" src="../jasmine-1.0.2/jasmine-html.js"></script>
+	<script src="../js/test.js"></script>
+</head>
+
+<body>
+
+	<script type="text/javascript">
+
+		describe("test", function() {
+
+            it("", function() {
+                expect(Test.simple('hehe')).toBe('HEHE');
+            });
+
+            it("", function() {
+                expect(Test.complex('{"a":"b", "c":"d"}')).toBe({"a": "b", "c": "d"});
+                expect(@spec);
+                expect(var ret = Test.complex('{"a":"b", "c":"d"}'););
+                expect(ret['a'] -> 'b'	);
+                expect(ret['b'] -> 'd');
+            });
+
+        });
+
+		jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
+		jasmine.getEnv().execute();
+
+	</script>
+
+</body>
+
+</html>

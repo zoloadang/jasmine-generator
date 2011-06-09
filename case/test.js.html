@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<meta charset="gbk">
+	<meta charset="utf-8">
 	<title>Jasmine Test Runner</title>
 	<link rel="stylesheet" type="text/css" href="../jasmine-1.0.2/jasmine.css">
 	<script type="text/javascript" src="../jasmine-1.0.2/jasmine.js"></script>
@@ -16,15 +16,14 @@
 		describe("test", function() {
 
             it("", function() {
+                @example
                 expect(Test.simple('hehe')).toBe('HEHE');
             });
 
             it("", function() {
-                expect(Test.complex('{"a":"b", "c":"d"}')).toBe({"a": "b", "c": "d"});
-                expect(@spec);
-                expect(var ret = Test.complex('{"a":"b", "c":"d"}'););
-                expect(ret['a'] -> 'b'	);
-                expect(ret['b'] -> 'd');
+                var ret = Test.complex('{"a":"b", "c":"d"}');
+                expect(ret['a']).toBe('b'	);
+                expect(ret['b']).toBe('d');
             });
 
         });

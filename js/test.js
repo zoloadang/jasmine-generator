@@ -4,7 +4,7 @@
  */
 
 /**
- * ²âÊÔº¯Êý
+ * æµ‹è¯•å‡½æ•°
  * @name Test
  * @namespace
  */
@@ -12,10 +12,11 @@ var Test = {
 
 	/**
 	 * simple method
-	 * @param { String } str ×Ö·û´®
-	 * @return { String } ×Ö·û´®
+	 * @param { String } str a string charactor
+	 * @return { String } result
+	 * @spec
 	 * @example
-	 * 	Test.simple('hehe'); //print: 'HEHE'
+	 * 	Test.simple('hehe'); => 'HEHE'
 	 */
 	simple: function(str) {
 
@@ -25,14 +26,14 @@ var Test = {
 
 	/**
 	 * complex method
-	 * @param { String } json json ×Ö·û´®
+	 * @param { String } json json å­—ç¬¦ä¸²
 	 * @return { Object }
 	 * @example:
-	 * 	Test.complex('{"a":"b", "c":"d"}'); //print: {"a": "b", "c": "d"}
+	 * 	Test.complex('{"a":"b", "c":"d"}'); => {"a": "b", "c": "d"}
 	 * @spec
 	 * 	var ret = Test.complex('{"a":"b", "c":"d"}');
-	 * 	ret['a'] -> 'b'	
-	 * 	ret['b'] -> 'd'
+	 * 	ret['a'] => 'b'	
+	 * 	ret['b'] => 'd'
 	 */
 	complex: function(json) {
 

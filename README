@@ -1,15 +1,11 @@
 jasmine creater:
 
-使用条件:
+**使用条件:**
 
 * js 注释遵循 jsdoc 规则;
 * 本地安装 python 2.4 以上版本;
 
-使用方法:
-
-* 修改 run.bat 文件中参数:
-	python create.py root="js" out="case" template="template.html"
-  其中 root 为需要生成用例的 js 文件夹, out 为输出用例的文件夹, template 为用例模板.
+**使用方法:**
 
 * js 注释中支持两种用例自定义方法:
 
@@ -44,5 +40,11 @@ jasmine creater:
 			 * 	var ret2 = Test.complex('{"e":"f"}');
 			 * 	ret2['e'] => 'f'	
 			 */
+
+* 修改 run.bat 文件中参数:
+	python create.py root="js" out="case" template="template.html"
+  其中 root 为需要生成用例的 js 文件夹, out 为输出用例的文件夹, template 为用例模板.
+
+* 运行 run.bat
 
 欢迎一起参与到编码.

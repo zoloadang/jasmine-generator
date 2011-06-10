@@ -1,16 +1,26 @@
 #coding:utf-8
 
-import re, os
+import re, os, sys
 import os.path
 
-#文件夹目录
-rootdir = 'js/'
+#获取输出路径
+args = sys.argv
 
-#模板文件
-template = 'template.html'
+#匹配 =
+rootReg = re.compile(r'root=')
+tempReg = re.compile(r'template=')
+outReg = re.compile(r'out=')
 
-#输出目录
-outdir = 'case/'
+for arg in args:
+	#文件夹目录
+	if rootReg.search(arg):
+		rootdir = rootReg.sub('', arg)
+	#模板文件
+	if tempReg.search(arg):
+		template = tempReg.sub('', arg)
+	#输出目录
+	if outReg.search(arg):
+		outdir = outReg.sub('', arg)
 
 #################################################################################################
 

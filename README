@@ -1,1 +1,48 @@
-crate jasmine test case by comment.
+jasmine creater:
+
+使用条件:
+
+* js 注释遵循 jsdoc 规则;
+* 本地安装 python 2.4 以上版本;
+
+使用方法:
+
+* 修改 run.bat 文件中参数:
+	python create.py root="js" out="case" template="template.html"
+  其中 root 为需要生成用例的 js 文件夹, out 为输出用例的文件夹, template 为用例模板.
+
+* js 注释中支持两种用例自定义方法:
+
+	1. 简单模式:
+
+	   可以将 example 和用例结合使用, example 就是用例:
+
+			/**
+			 * simple method
+			 * @param { String } str a string charactor
+			 * @return { String } result
+			 * @spec simple
+			 * @example
+			 * 	Test.simple('hehe'); => 'HEHE'
+			 */
+
+	2. 复杂模式:
+
+	   可能简单模式会影响 jsdoc 中 example 的输出, 这时可以将用例单独书写:
+
+			/**
+			 * complex method
+			 * @param { String } json json string
+			 * @return { Object }
+			 * @example:
+			 * 	Test.complex('{"a":"b", "c":"d"}'); => {"a": "b", "c": "d"}
+			 * @spec complex1
+			 * 	var ret1 = Test.complex('{"a":"b", "c":"d"}');
+			 * 	ret1['a'] => 'b'	
+			 * 	ret1['c'] => 'd'
+			 * @spec complex2
+			 * 	var ret2 = Test.complex('{"e":"f"}');
+			 * 	ret2['e'] => 'f'	
+			 */
+
+欢迎一起参与到编码.

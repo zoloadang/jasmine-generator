@@ -1,5 +1,5 @@
 #coding:utf-8
-#quote http://hi.baidu.com/tinylee/blog/item/763177c6820444199c163da8.html
+#quote http://hi.baidu.com/tinylee/blog/item/763177c6820444199c163da8.html, thanks
 
 import os, itertools
 

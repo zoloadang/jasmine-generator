@@ -1,1 +1,1 @@
-python create.py root="js/" out="case/" template="template.html"
+python create.py root="./js" out="./case" template="./template.html"

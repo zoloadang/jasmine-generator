@@ -20,14 +20,14 @@
             });
 
             it("complex1", function() {
-                var ret = Test.complex('{"a":"b", "c":"d"}');
-                expect(ret['a']).toBe('b'	);
-                expect(ret['b']).toBe('d');
+                var ret1 = Test.complex('{"a":"b", "c":"d"}');
+                expect(ret1['a']).toBe('b'	);
+                expect(ret1['c']).toBe('d');
             });
 
             it("complex2", function() {
-                var ret = Test.complex('{"e":"f"}');
-                expect(ret['e']).toBe('f'	);
+                var ret2 = Test.complex('{"e":"f"}');
+                expect(ret2['e']).toBe('f'	);
             });
 
         });

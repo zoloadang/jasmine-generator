@@ -1,12 +1,14 @@
 #coding:utf-8
 
-import re, os, sys
+import re, os, sys, shutil
 import os.path
+from path.relative import relpath
+
 
 #获取输出路径
 args = sys.argv
 
-#匹配 =
+#匹配路径
 rootReg = re.compile(r'root=')
 tempReg = re.compile(r'template=')
 outReg = re.compile(r'out=')
@@ -21,9 +23,10 @@ for arg in args:
 	#输出目录
 	if outReg.search(arg):
 		outdir = outReg.sub('', arg)
+		if not os.path.exists(outdir):
+			os.mkdir(outdir)
 
 #################################################################################################
-
 
 #匹配换行
 wrap = re.compile(r'(\r|\n)')
@@ -159,9 +162,13 @@ def createSpec(ret, source, fname):
 
 		#生成文件
 		fi = open(template, 'r')
-		testFi = open(outdir + fname + '.html', 'w')
 		html = fi.read()
-		html = jspath.sub('../' + rootdir + fname, html)
+		html = jspath.split(html)
+		rel = relpath(outdir, rootdir, '/') + '/' + fname
+		html.insert(1, rel)
+		html = ''.join(html)
+		#html = jspath.sub(, html)
+		testFi = open(outdir + '/' + fname + '.html', 'w')
 		testFi.write(jasmineTag.sub(''.join(code), html))
 		testFi.close()
 		fi.close()
@@ -177,4 +184,5 @@ def run():
 			#生成用例
 			createSpec(ret, open(path, 'r').read(), f)
 
-run()
+if __name__ == '__main__':
+	run()

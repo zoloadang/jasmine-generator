@@ -31,12 +31,12 @@ var Test = {
 	 * @example:
 	 * 	Test.complex('{"a":"b", "c":"d"}'); => {"a": "b", "c": "d"}
 	 * @spec complex1
-	 * 	var ret = Test.complex('{"a":"b", "c":"d"}');
-	 * 	ret['a'] => 'b'	
-	 * 	ret['b'] => 'd'
+	 * 	var ret1 = Test.complex('{"a":"b", "c":"d"}');
+	 * 	ret1['a'] => 'b'	
+	 * 	ret1['c'] => 'd'
 	 * @spec complex2
-	 * 	var ret = Test.complex('{"e":"f"}');
-	 * 	ret['e'] => 'f'	
+	 * 	var ret2 = Test.complex('{"e":"f"}');
+	 * 	ret2['e'] => 'f'	
 	 */
 	complex: function(json) {
 

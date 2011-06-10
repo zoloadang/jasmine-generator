@@ -1,0 +1,5 @@
+(function() {
+ 
+	{JASMINE_CASE} 
+ 
+})();

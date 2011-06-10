@@ -57,6 +57,11 @@ def checkAt(line):
 	at = re.compile(r'\s*\*\s*@')
 	return at.search(line)
 
+#get postfix
+def getPostfix(str):
+	post = re.compile(r'([^.]+\.)+([^.]+)$')
+	return post.sub(r'\2', str)
+
 #get spec
 def getSpec(source):
 
@@ -164,12 +169,15 @@ def createSpec(ret, source, fname):
 		#生成文件
 		fi = open(template, 'r')
 		html = fi.read()
-		html = jspath.split(html)
-		rel = relpath(outdir, rootdir, '/') + '/' + fname
-		html.insert(1, rel)
-		html = ''.join(html)
-		#html = jspath.sub(, html)
-		testFi = open(outdir + '/' + fname + '.html', 'w')
+
+		#replace src
+		if jspath.search(html):
+			html = jspath.split(html)
+			rel = relpath(outdir, rootdir, '/') + '/' + fname
+			html.insert(1, rel)
+			html = ''.join(html)
+
+		testFi = open(outdir + '/' + fname + '.' + getPostfix(template), 'w')
 		testFi.write(jasmineTag.sub(''.join(code), html))
 		testFi.close()
 		fi.close()

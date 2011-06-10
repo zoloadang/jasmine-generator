@@ -62,11 +62,7 @@ def getSpec(source):
 
 	for line in source:
 
-		#匹配 spec description
-		if spec.match(line):
-			specDesc = wrap.sub('', line)
-			specDesc = spec.sub('', specDesc)
-
+		#end
 		if checkEnd(line) or (checkAt(line) and isCase > 2):
 #			print line
 #			print exampleEnd.match(line)
@@ -77,12 +73,18 @@ def getSpec(source):
 				specList = []
 				specDesc = ''
 
+		#匹配 spec description
+		if spec.match(line):
+			specDesc = wrap.sub('', line)
+			specDesc = spec.sub('', specDesc)
+
 		#匹配用例
 		if isCase:
 			isCase += 1
 			if not checkAt(line) or isCase > 2:
 				specList.append(tab.sub('', line))
 
+		#start
 		if checkStart(line):
 #			print line 
 #			print exampleStart.match(line)

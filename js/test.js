@@ -30,10 +30,13 @@ var Test = {
 	 * @return { Object }
 	 * @example:
 	 * 	Test.complex('{"a":"b", "c":"d"}'); => {"a": "b", "c": "d"}
-	 * @spec complex
+	 * @spec complex1
 	 * 	var ret = Test.complex('{"a":"b", "c":"d"}');
 	 * 	ret['a'] => 'b'	
 	 * 	ret['b'] => 'd'
+	 * @spec complex2
+	 * 	var ret = Test.complex('{"e":"f"}');
+	 * 	ret['e'] => 'f'	
 	 */
 	complex: function(json) {
 

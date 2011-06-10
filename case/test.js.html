@@ -19,10 +19,15 @@
                 expect(Test.simple('hehe')).toBe('HEHE');
             });
 
-            it("complex", function() {
+            it("complex1", function() {
                 var ret = Test.complex('{"a":"b", "c":"d"}');
                 expect(ret['a']).toBe('b'	);
                 expect(ret['b']).toBe('d');
+            });
+
+            it("complex2", function() {
+                var ret = Test.complex('{"e":"f"}');
+                expect(ret['e']).toBe('f'	);
             });
 
         });

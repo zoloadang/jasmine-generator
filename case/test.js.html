@@ -15,12 +15,11 @@
 
 		describe("test", function() {
 
-            it("", function() {
-                @example
+            it("simple", function() {
                 expect(Test.simple('hehe')).toBe('HEHE');
             });
 
-            it("", function() {
+            it("complex", function() {
                 var ret = Test.complex('{"a":"b", "c":"d"}');
                 expect(ret['a']).toBe('b'	);
                 expect(ret['b']).toBe('d');

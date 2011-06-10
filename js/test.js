@@ -4,7 +4,7 @@
  */
 
 /**
- * 测试函数
+ * test function
  * @name Test
  * @namespace
  */
@@ -14,7 +14,7 @@ var Test = {
 	 * simple method
 	 * @param { String } str a string charactor
 	 * @return { String } result
-	 * @spec
+	 * @spec simple
 	 * @example
 	 * 	Test.simple('hehe'); => 'HEHE'
 	 */
@@ -26,11 +26,11 @@ var Test = {
 
 	/**
 	 * complex method
-	 * @param { String } json json 字符串
+	 * @param { String } json json string
 	 * @return { Object }
 	 * @example:
 	 * 	Test.complex('{"a":"b", "c":"d"}'); => {"a": "b", "c": "d"}
-	 * @spec
+	 * @spec complex
 	 * 	var ret = Test.complex('{"a":"b", "c":"d"}');
 	 * 	ret['a'] => 'b'	
 	 * 	ret['b'] => 'd'

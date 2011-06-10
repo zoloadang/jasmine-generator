@@ -1,5 +1,10 @@
 jasmine creater:
 
+**功能介绍:**
+
+* 可以在写注释的同时完成测试用例的书写, 节约写测试用例的时间, 同时不会影响 jsdoc 的输出;
+* 支持 html 模板以及 js 模板;
+
 **使用条件:**
 
 * js 注释遵循 jsdoc 规则;
@@ -47,4 +52,5 @@ jasmine creater:
 
 * 运行 run.bat
 
-欢迎一起参与到编码.
+欢迎大家试用并提出宝贵意见, 谢谢大家. (email: nanzhienai@163.com)
+

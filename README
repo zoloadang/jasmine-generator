@@ -1,4 +1,5 @@
 jasmine creater:
+------------------------------
 
 **jasmine creater 是什么?**
 
@@ -47,11 +48,21 @@ jasmine creater:
 
   其中 => 前边为要检测的语句, 后边为预期的结果.
 
-* 修改 run.bat 文件中参数:
-	python create.py root="js" out="case" template="template.html"
+* windows:
+
+  修改 run.bat 文件中参数:
+
+		python create.py root="js" out="case" template="template.html"
+
   其中 root 为需要生成用例的 js 文件夹, out 为输出用例的文件夹, template 为用例模板.
 
-* 运行 run.bat
+  运行 run.bat 文件, 或者直接在命令行下运行以上命令.
+
+* ubuntu:
+
+  命令行下运行:
+
+		python create.py root="js" out="case" template="template.html"
 
 欢迎大家试用并提出宝贵意见, 谢谢大家. (email: nanzhienai@163.com, blog: http://www.12sui.cn)
 

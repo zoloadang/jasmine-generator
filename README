@@ -45,6 +45,8 @@ jasmine creater:
 			 * 	ret2['e'] => 'f'	
 			 */
 
+  其中 => 前边为要检测的语句, 后边为预期的结果.
+
 * 修改 run.bat 文件中参数:
 	python create.py root="js" out="case" template="template.html"
   其中 root 为需要生成用例的 js 文件夹, out 为输出用例的文件夹, template 为用例模板.

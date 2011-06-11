@@ -1,18 +1,17 @@
 jasmine creater:
 
-**功能介绍:**
+**jasmine creater 是什么?**
 
-* 可以在写注释的同时完成测试用例的书写, 节约写测试用例的时间, 同时不会影响 jsdoc 的输出;
-* 支持 html 模板以及 js 模板;
+这是一款根据注释自动生成 jasmine 用例的工具, 可以帮你节省书写用例的时间, 目前支持生成 html 文件或者 js 文件.
 
 **使用条件:**
 
-* js 注释遵循 jsdoc 规则;
+* js 注释遵循 jsdoc 规则(http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml);
 * 本地安装 python 2.4 以上版本;
 
 **使用方法:**
 
-* js 注释中支持两种用例自定义方法:
+* js 注释中增添了 @spec 标记, 支持两种用例定义方法:
 
 	1. 简单模式:
 
@@ -52,5 +51,5 @@ jasmine creater:
 
 * 运行 run.bat
 
-欢迎大家试用并提出宝贵意见, 谢谢大家. (email: nanzhienai@163.com)
+欢迎大家试用并提出宝贵意见, 谢谢大家. (email: nanzhienai@163.com, blog: http://www.12sui.cn)
 

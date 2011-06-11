@@ -5,35 +5,27 @@ import re, os, sys, shutil
 import os.path
 from path.relative import relpath
 
-
-#获取输出路径
-args = sys.argv
-
-#匹配路径
-rootReg = re.compile(r'root=')
-tempReg = re.compile(r'template=')
-outReg = re.compile(r'out=')
-
-for arg in args:
-	#文件夹目录
-	if rootReg.search(arg):
-		rootdir = rootReg.sub('', arg)
-	#模板文件
-	if tempReg.search(arg):
-		template = tempReg.sub('', arg)
-	#输出目录
-	if outReg.search(arg):
-		outdir = outReg.sub('', arg)
-		if not os.path.exists(outdir):
-			os.mkdir(outdir)
-
-#################################################################################################
-
-#匹配换行
-wrap = re.compile(r'(\r|\n)')
-
-#空格
-space = '    '
+#get arg
+def getArg():
+	#获取输出路径
+	args = sys.argv
+	#匹配路径
+	rootReg = re.compile(r'root=')
+	tempReg = re.compile(r'template=')
+	outReg = re.compile(r'out=')
+	for arg in args:
+		#文件夹目录
+		if rootReg.search(arg):
+			rootdir = rootReg.sub('', arg)
+		#模板文件
+		if tempReg.search(arg):
+			template = tempReg.sub('', arg)
+		#输出目录
+		if outReg.search(arg):
+			outdir = outReg.sub('', arg)
+			if not os.path.exists(outdir):
+				os.mkdir(outdir)
+	return rootdir, outdir, template
 
 #get description
 def getDesc(source):
@@ -69,6 +61,9 @@ def getSpec(source):
 	ret = []
 	specList = []
 	specDesc = ''
+
+	#匹配换行
+	wrap = re.compile(r'(\r|\n)')
 
 	#是否是用例
 	isCase = 0
@@ -112,7 +107,18 @@ def getSpec(source):
 	return ret
 
 #crate spec
-def createSpec(ret, source, fname):
+def createSpec(ret, source, fname, arg):
+
+	#参数
+	rootdir = arg[0]
+	outdir = arg[1]
+	template = arg[2]
+
+	#空格
+	space = '    '
+
+	#匹配换行
+	wrap = re.compile(r'(\r|\n)')
 
 	#缩进个数
 	ident = 1
@@ -185,13 +191,14 @@ def createSpec(ret, source, fname):
 
 #run
 def run():
-	for parent, dirnames, filename in os.walk(rootdir):
+	arg = getArg()
+	for parent, dirnames, filename in os.walk(arg[0]):
 		for f in filename:
 			path = os.path.join(parent, f)
 			#获取用例
 			ret = getSpec(open(path, 'r').readlines())
 			#生成用例
-			createSpec(ret, open(path, 'r').read(), f)
+			createSpec(ret, open(path, 'r').read(), f, arg)
 
 if __name__ == '__main__':
 	run()

@@ -42,6 +42,23 @@ var Test = {
 
 		return eval('(' + json + ')');
 
+	},
+
+	/**
+	 * sum method
+	 * @param { Number } a one number
+	 * @param { Number } b anthor number
+	 * @return { Number } sum
+	 * @spec get sum
+	 * @example:
+	 * 	var a = 3 * 3,
+	 * 		b = 10 / 5;
+	 * 	Test.sum(a, b) => 11; 
+	 */
+	sum: function(a, b) {
+
+		return a + b;
+
 	}
 
 };

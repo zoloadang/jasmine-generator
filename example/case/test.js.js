@@ -17,6 +17,12 @@
                 expect(ret2['e']).toBe('f'	);
             });
 
+            it("get sum", function() {
+                var a = 3 * 3,
+                b = 10 / 5;
+                expect(Test.sum(a, b)).toBe(11);
+            });
+
         }); 
  
 })();

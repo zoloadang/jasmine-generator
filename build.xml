@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project name="build jasmine case" default="build" basedir=".">
+
+	<!-- 定义变量 -->
+	<property name="root" value="root=example/js"/>
+	<property name="out" value="out=example/case"/>
+
+	<!-- compile -->
+	<target name="compile">
+		<taskdef name="py-run" classname="org.pyant.tasks.PythonRunTask" classpath="pyAntTasks-1.3.3.jar"/>
+	</target>
+
+	<!-- case -->
+	<target name="runcase" depends="compile">
+		<py-run script="create.py">
+			<arg value="${root}"/>
+			<arg value="${out}"/>
+			<arg value="template=example/template.html"/>
+		</py-run>
+		<py-run script="create.py">
+			<arg value="${root}"/>
+			<arg value="${out}"/>
+			<arg value="template=example/template.js"/>
+		</py-run>
+	</target>
+
+    <target name="build" depends="runcase"> </target>
+    
+</project>

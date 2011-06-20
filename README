@@ -64,5 +64,28 @@ jasmine creater:
 
 		python create.py root="js" out="case" template="template.html"
 
+* 在 Ant 中使用:
+
+  需要引入 pyAntTasks-1.3.3.jar, 然后运行 python 即可, 示例文件在 build.xml 中:
+
+		<!-- compile -->
+		<target name="compile">
+			<taskdef name="py-run" classname="org.pyant.tasks.PythonRunTask" classpath="pyAntTasks-1.3.3.jar"/>
+		</target>
+
+		<!-- case -->
+		<target name="runcase" depends="compile">
+			<py-run script="create.py">
+				<arg value="${root}"/>
+				<arg value="${out}"/>
+				<arg value="template=example/template.html"/>
+			</py-run>
+			<py-run script="create.py">
+				<arg value="${root}"/>
+				<arg value="${out}"/>
+				<arg value="template=example/template.js"/>
+			</py-run>
+		</target>
+
 欢迎大家试用并提出宝贵意见, 谢谢大家. (email: nanzhienai@163.com, blog: http://www.12sui.cn)
 

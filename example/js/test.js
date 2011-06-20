@@ -53,7 +53,7 @@ var Test = {
 	 * @example
 	 * 		var a = 3 * 3,
 	 * 			b = 10 / 5;
-	 * 		Test.sum(a, b) => 11; 
+	 * 		Test.sum(a, b) // => 11; 
 	 */
 	sum: function(a, b) {
 

@@ -50,23 +50,23 @@ jasmine creater:
 
 * windows:
 
-  修改 run.bat 文件中参数:
+	修改 run.bat 文件中参数:
 
 		python create.py root="js" out="case" template="template.html"
 
-  其中 root 为需要生成用例的 js 文件夹, out 为输出用例的文件夹, template 为用例模板.
+	其中 root 为需要生成用例的 js 文件夹, out 为输出用例的文件夹, template 为用例模板.
 
-  运行 run.bat 文件, 或者直接在命令行下运行以上命令.
+	运行 run.bat 文件, 或者直接在命令行下运行以上命令.
 
 * ubuntu:
 
-  命令行下运行:
+	命令行下运行:
 
 		python create.py root="js" out="case" template="template.html"
 
 * 在 Ant 中使用:
 
-  需要引入 pyAntTasks-1.3.3.jar, 然后运行 python 即可, 示例文件在 build.xml 中:
+	需要引入 pyAntTasks-1.3.3.jar, 然后运行 python 即可, 示例文件在 build.xml 中:
 
 		<!-- compile -->
 		<target name="compile">

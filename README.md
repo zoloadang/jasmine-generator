@@ -15,7 +15,7 @@ jasmine creater 是什么?
 使用方法:
 ---------------------------------
 
-* js 注释中增添了 ·@spec· 标记, 支持两种用例定义方法:
+* js 注释中增添了 <code>@spec</code> 标记, 支持两种用例定义方法:
 
 	+ 简单模式:
 
@@ -49,7 +49,7 @@ jasmine creater 是什么?
 				 * 	ret2['e'] => 'f'	
 				 */
 
-  	其中 ·=>· 前边为要检测的语句, 后边为预期的结果.
+  	其中 <code>=></code> 前边为要检测的语句, 后边为预期的结果.
 
 * windows:
 
@@ -57,7 +57,7 @@ jasmine creater 是什么?
 
 		python create.py root="js" out="case" template="template.html"
 
-	其中 ·root· 为需要生成用例的 js 文件夹, ·out· 为输出用例的文件夹, ·template· 为用例模板.
+	其中 <code>root</code> 为需要生成用例的 js 文件夹, <code>out</code> 为输出用例的文件夹, <code>template</code> 为用例模板.
 
 	运行 run.bat 文件, 或者直接在命令行下运行以上命令.
 

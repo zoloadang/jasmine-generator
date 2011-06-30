@@ -3,16 +3,19 @@ jasmine creater:
 
 ***************************************
 
-**jasmine creater 是什么?**
+jasmine creater 是什么?
+---------------------------------
 
 这是一款根据注释自动生成 jasmine 用例的工具, 可以帮你节省书写用例的时间, 目前支持生成 html 文件或者 js 文件.
 
-**使用条件:**
+使用条件:
+---------------------------------
 
 * js 注释遵循 jsdoc 规则(http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml);
 * 本地安装 python 2.4 以上版本;
 
-**使用方法:**
+使用方法:
+---------------------------------
 
 * js 注释中增添了 <code>@spec</code> 标记, 支持两种用例定义方法:
 

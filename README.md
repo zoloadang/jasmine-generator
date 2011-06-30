@@ -1,5 +1,6 @@
 jasmine creater:
 ===================================================================
+*-*-*-*-*-
 
 **jasmine creater 是什么?**
 
@@ -16,35 +17,35 @@ jasmine creater:
 
 	+ 简单模式:
 
-	   可以将 example 和用例结合使用, example 就是用例:
+		  可以将 example 和用例结合使用, example 就是用例:
 
-			/**
-			 * simple method
-			 * @param { String } str a string charactor
-			 * @return { String } result
-			 * @spec simple
-			 * @example
-			 * 	Test.simple('hehe'); => 'HEHE'
-			 */
+				/**
+				 * simple method
+				 * @param { String } str a string charactor
+				 * @return { String } result
+				 * @spec simple
+				 * @example
+				 * 	Test.simple('hehe'); => 'HEHE'
+				 */
 
 	+ 复杂模式:
 
-	   可能简单模式会影响 jsdoc 中 example 的输出, 这时可以将用例单独书写:
+		  可能简单模式会影响 jsdoc 中 example 的输出, 这时可以将用例单独书写:
 
-			/**
-			 * complex method
-			 * @param { String } json json string
-			 * @return { Object }
-			 * @example:
-			 * 	Test.complex('{"a":"b", "c":"d"}'); => {"a": "b", "c": "d"}
-			 * @spec complex1
-			 * 	var ret1 = Test.complex('{"a":"b", "c":"d"}');
-			 * 	ret1['a'] => 'b'	
-			 * 	ret1['c'] => 'd'
-			 * @spec complex2
-			 * 	var ret2 = Test.complex('{"e":"f"}');
-			 * 	ret2['e'] => 'f'	
-			 */
+				/**
+				 * complex method
+				 * @param { String } json json string
+				 * @return { Object }
+				 * @example:
+				 * 	Test.complex('{"a":"b", "c":"d"}'); => {"a": "b", "c": "d"}
+				 * @spec complex1
+				 * 	var ret1 = Test.complex('{"a":"b", "c":"d"}');
+				 * 	ret1['a'] => 'b'	
+				 * 	ret1['c'] => 'd'
+				 * @spec complex2
+				 * 	var ret2 = Test.complex('{"e":"f"}');
+				 * 	ret2['e'] => 'f'	
+				 */
 
   	其中 <code>=></code> 前边为要检测的语句, 后边为预期的结果.
 

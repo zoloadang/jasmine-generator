@@ -34,26 +34,17 @@ def relpath(p1, p2, sep=os.path.sep, pardir=os.path.pardir):
 	return sep.join([pardir] * len(u1) + u2)
 
 #get arg
+
 def getArg():
 	#获取输出路径
 	args = sys.argv
-	#匹配路径
-	rootReg = re.compile(r'root=')
-	tempReg = re.compile(r'template=')
-	outReg = re.compile(r'out=')
-	for arg in args:
-		#文件夹目录
-		if rootReg.search(arg):
-			rootdir = rootReg.sub('', arg)
-		#模板文件
-		if tempReg.search(arg):
-			template = tempReg.sub('', arg)
-		#输出目录
-		if outReg.search(arg):
-			outdir = outReg.sub('', arg)
-			if not os.path.exists(outdir):
-				os.mkdir(outdir)
-	return rootdir, outdir, template
+	reg = re.compile(r'([^\s]+)=([^\s]+)')
+	list = reg.findall(' '.join(args))
+#	print list
+	ret = {}
+	for l in list:
+		ret[l[0]] = l[1]
+	return ret
 
 #get description
 def getDesc(source):
@@ -79,7 +70,7 @@ def checkAt(line):
 
 #get postfix
 def getPostfix(str):
-	post = re.compile(r'([^.]+\.)+([^.]+)$')
+	post = re.compile(r'\.*([^\.]+\.)+([^\.]+)$')
 	return post.sub(r'\2', str)
 
 #get spec
@@ -135,12 +126,7 @@ def getSpec(source):
 	return ret
 
 #crate spec
-def createSpec(ret, source, fname, arg):
-
-	#参数
-	rootdir = arg[0]
-	outdir = arg[1]
-	template = arg[2]
+def createSpec(ret, source, fname, args):
 
 	#空格
 	space = '    '
@@ -172,6 +158,9 @@ def createSpec(ret, source, fname, arg):
 	#匹配末尾分号
 	semi = re.compile(r';\s*$')
 
+	#转义 html
+	lt = re.compile(r'&lt;')
+	gt = re.compile(r'&gt;')
 
 	if len(ret) > 0:
 
@@ -208,37 +197,48 @@ def createSpec(ret, source, fname, arg):
 		ident -= 1
 		code.append(ident * space)
 		code.append('});')
+		result = ''.join(code)
+
+		#是否需要转换 html
+		if args.has_key('decode'):
+			print 'decode'
+			result = lt.sub('<', result)
+			result = gt.sub('>', result)
 
 #		print code
 
 		#生成文件
-		fi = open(template, 'r')
+		fi = open(args['template'], 'r')
 		html = fi.read()
 
 		#replace src
 		if jspath.search(html):
 			html = jspath.split(html)
-			rel = relpath(outdir, rootdir, '/') + '/' + fname
+			rel = relpath(args['out'], args['root'], '/') + '/' + fname
 			html.insert(1, rel)
 			html = ''.join(html)
 
-		testFi = open(outdir + '/' + fname + '.' + getPostfix(template), 'w')
+		#创建目录
+		if not os.path.exists(args['out']):
+			os.mkdir(args['out'])
+
+		testFi = open(args['out'] + '/' + fname + '.' + getPostfix(args['template']), 'w')
 		html = jsname.sub(postfix.sub('', fname), html)
-		testFi.write(jasmineTag.sub(''.join(code), html))
+		testFi.write(jasmineTag.sub(result, html))
 		testFi.close()
 		fi.close()
 
 
 #run
 def run():
-	arg = getArg()
-	for parent, dirnames, filename in os.walk(arg[0]):
+	args = getArg()
+	for parent, dirnames, filename in os.walk(args['root']):
 		for f in filename:
 			path = os.path.join(parent, f)
 			#获取用例
 			ret = getSpec(open(path, 'r').readlines())
 			#生成用例
-			createSpec(ret, open(path, 'r').read(), f, arg)
+			createSpec(ret, open(path, 'r').read(), f, args)
 
 if __name__ == '__main__':
 	run()

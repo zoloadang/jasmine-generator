@@ -199,9 +199,9 @@ def createSpec(ret, source, fname, args):
 		code.append('});')
 		result = ''.join(code)
 
-		#是否需要转换 html
-		if args.has_key('decode'):
-			print 'decode'
+		#是否需要还原 html
+		if args.has_key('restore'):
+			print 'restore html'
 			result = lt.sub('<', result)
 			result = gt.sub('>', result)
 

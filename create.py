@@ -1,5 +1,6 @@
 #coding:utf-8
 #author nanzhi<nanzhienai@163.com>
+#version 0.2
 
 import re, os, sys, itertools
 import os.path
@@ -141,7 +142,7 @@ def createSpec(ret, source, fname, args):
 	code = []
 
 	#匹配注释中心
-	center = re.compile(r'\s*;?\s*/*\s*=>\s*')
+	center = re.compile(r'\s*;?\s*/*\s*[=-]\s*>\s*')
 
 	#匹配模板
 	jasmineTag = re.compile(r'\{JASMINE_CASE\}')

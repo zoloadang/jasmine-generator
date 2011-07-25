@@ -16,7 +16,7 @@ var Test = {
 	 * @return { String } result
 	 * @spec simple
 	 * @example
-	 * 		Test.simple('hehe'); => 'HEHE'
+	 * 		Test.simple('hehe'); - > 'HEHE'
 	 */
 	simple: function(str) {
 

@@ -57,7 +57,7 @@ jasmine creater 是什么?
 
 		python create.py root="js" out="case" template="template.html" restore="true"
 
-	其中 `root` 为需要生成用例的 js 文件夹, `out` 为输出用例的文件夹, `template` 为用例模板, 当需要转换注释中的 &lt; 和 &gt; 为 <> 时, 添加 `restore` 项.
+	其中 `root` 为需要生成用例的 js 文件夹, `out` 为输出用例的文件夹, `template` 为用例模板, 当需要转换注释中的 `&lt;` 和 `&gt;` 为 <> 时, 添加 `restore` 项.
 
 	运行 run.bat 文件, 或者直接在命令行下运行以上命令.
 

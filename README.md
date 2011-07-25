@@ -27,7 +27,7 @@ jasmine creater 是什么?
 				 * @return { String } result
 				 * @spec simple
 				 * @example
-				 * 	Test.simple('hehe'); => 'HEHE'
+				 * 		Test.simple('hehe'); => 'HEHE'
 				 */
 
 	+ 复杂模式:
@@ -39,14 +39,14 @@ jasmine creater 是什么?
 				 * @param { String } json json string
 				 * @return { Object }
 				 * @example:
-				 * 	Test.complex('{"a":"b", "c":"d"}'); => {"a": "b", "c": "d"}
+				 * 		Test.complex('{"a":"b", "c":"d"}'); => {"a": "b", "c": "d"}
 				 * @spec complex1
-				 * 	var ret1 = Test.complex('{"a":"b", "c":"d"}');
-				 * 	ret1['a'] => 'b'	
-				 * 	ret1['c'] => 'd'
+				 * 		var ret1 = Test.complex('{"a":"b", "c":"d"}');
+				 * 		ret1['a'] => 'b'	
+				 * 		ret1['c'] => 'd'
 				 * @spec complex2
-				 * 	var ret2 = Test.complex('{"e":"f"}');
-				 * 	ret2['e'] => 'f'	
+				 * 		var ret2 = Test.complex('{"e":"f"}');
+				 * 		ret2['e'] => 'f'	
 				 */
 
   	其中 `=>` 前边为要检测的语句, 后边为预期的结果.
@@ -55,9 +55,9 @@ jasmine creater 是什么?
 
 	修改 run.bat 文件中参数:
 
-		python create.py root="js" out="case" template="template.html"
+		python create.py root="js" out="case" template="template.html" restore="true"
 
-	其中 `root` 为需要生成用例的 js 文件夹, `out` 为输出用例的文件夹, `template` 为用例模板.
+	其中 `root` 为需要生成用例的 js 文件夹, `out` 为输出用例的文件夹, `template` 为用例模板, 当需要转换注释中的 &lt; 和 &gt; 为 <> 时, 添加 `restore` 项.
 
 	运行 run.bat 文件, 或者直接在命令行下运行以上命令.
 

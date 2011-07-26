@@ -19,7 +19,7 @@ jasmine creater 是什么?
 
 * 简单模式:
 
-  可以将 example 和用例结合使用, example 就是用例:
+  	可以将 example 和用例结合使用, example 就是用例:
 
 		/**
 		 * simple method
@@ -33,7 +33,7 @@ jasmine creater 是什么?
 
 * 高级模式:
 
-  可能简单模式会影响 jsdoc 中 example 的输出, 这时可以将用例单独书写:
+  	可能简单模式会影响 jsdoc 中 example 的输出, 这时可以将用例单独书写:
 
 		/**
 		 * complex method
@@ -114,6 +114,7 @@ jasmine creater 是什么?
 * template: 该参数为用例输出模板路径, 可以为 .js 或者 .html 文件, 文件中的 `{JASMINE_CASE}` 将被替换为用例内容, `{JS_PATH}` 将被替换为当前 js 文件的路径, `{JS_NAME}` 将被替换为 js 文件名, 示例模块可以在 `example/template.html` 中找到;
 * restore: 如果你需要转换 jsdoc 注释中的 `&lt; &gt;` 为 `< >` 时, 需要添加此参数, value 值为 `true`;
 
+问题报告/意见建议:
+---------------------------------
 
-欢迎大家试用并提出宝贵意见: https://github.com/nanzhi/jasmine-creater/issues
-
+https://github.com/nanzhi/jasmine-creater/issues

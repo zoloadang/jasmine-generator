@@ -1,7 +1,7 @@
-jasmine creater:
+jasmine generator:
 ===================================================================
 
-jasmine creater 是什么?
+jasmine generator 是什么?
 ---------------------------------
 
 这是一款根据注释自动生成 jasmine 用例的工具, 可以帮你节省书写用例的时间, 目前支持生成 html 文件或者 js 文件.
@@ -117,4 +117,4 @@ jasmine creater 是什么?
 问题报告/意见建议:
 ---------------------------------
 
-https://github.com/nanzhi/jasmine-creater/issues
+https://github.com/nanzhi/jasmine-generator/issues

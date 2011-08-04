@@ -233,9 +233,12 @@ def createSpec(ret, source, fname, args):
 #run
 def run():
 	args = getArg()
-	for parent, dirnames, filename in os.walk(args['root']):
-		for f in filename:
-			path = os.path.join(parent, f)
+	root = args['root']
+	for f in os.listdir(root):
+		jsFile = re.compile(r'\.js$')
+		if jsFile.search(f):
+			path = os.path.join(root, f)
+#			print path, root
 			#获取用例
 			ret = getSpec(open(path, 'r').readlines())
 			#生成用例

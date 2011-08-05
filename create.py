@@ -214,10 +214,11 @@ def createSpec(ret, source, fname, args):
 
 		#replace src
 		if jspath.search(html):
-			html = jspath.split(html)
 			rel = relpath(args['out'], args['root'], '/') + '/' + fname
-			html.insert(1, rel)
-			html = ''.join(html)
+#			html = jspath.split(html)
+#			html.insert(1, rel)
+#			html = ''.join(html)
+			html = jspath.sub(rel, html)
 
 		#创建目录
 		if not os.path.exists(args['out']):

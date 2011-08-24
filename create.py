@@ -94,6 +94,9 @@ def getSpec(source):
 	#匹配 spec
 	spec = re.compile(r'\s*\*\s*@spec\s*')
 
+	#匹配转义符
+	fig = re.compile(r'\\')
+
 	for line in source:
 
 		#end
@@ -116,7 +119,9 @@ def getSpec(source):
 		if isCase:
 			isCase += 1
 			if not checkAt(line) or isCase > 2:
-				specList.append(tab.sub('', line))
+				result = tab.sub('', line)
+				result = fig.sub(r'\\\\', result)
+				specList.append(result)
 
 		#start
 		if checkStart(line):
